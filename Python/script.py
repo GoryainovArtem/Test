@@ -1,8 +1,8 @@
 import logging
-
-import requests
 import csv
 import os
+
+import requests
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -62,7 +62,7 @@ def get_available_stations():
     """
 
     logger.info("Начало выполнения программы")
-    api_key = os.getenv("yandex_station_api_key") #"5bb4fe1f-2886-455b-9795-eff4e25835e2"
+    api_key = os.getenv("yandex_station_api_key")
     url = f"https://api.rasp.yandex.net/v3.0/stations_list/?apikey={api_key}&lang=ru_RU&format=json"
     try:
         response = requests.get(url)
